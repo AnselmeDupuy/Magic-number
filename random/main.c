@@ -33,6 +33,7 @@ int main()
 		}
 		else if((jouer == 1)||(jouer == 10))
 		{
+			fin = 0;
 			if(jouer == 10)
 			{
 				printf("Debug mode, le nombre est: %d\n", random);
@@ -44,22 +45,21 @@ int main()
 				scanf("%d", &input);
 
 
-				if((count >= 3)&&(input != random))
+				if((count >= 5)&&(input != random))
 				{
 					if(input < random)
 					{
-						printf("C'est plus! %d essaie, un indice pour aider: les nombres mystère est entre %d et %d\n", count, approxInf,approxSup);
+						printf("C'est plus! %d essaie, un indice pour aider: le nombres mystère est entre %d et %d\n", count, approxInf,approxSup);
 					}
 					else if(input > random)
 					{
-						printf("C'est moins! %d essaie, un indice pour aider: les nombres mystère est entre %d et %d\n", count, approxInf,approxSup);
+						printf("C'est moins! %d essaie, un indice pour aider: le nombres mystère est entre %d et %d\n", count, approxInf,approxSup);
 					}
 				}
 				else if (input < random)
 				{
 					printf("C'est plus!\n");
 					count =  count + 1;
-					printf("%d", count);
 				}
 				else if(input > random)
 				{
