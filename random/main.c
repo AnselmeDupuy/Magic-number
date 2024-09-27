@@ -7,6 +7,7 @@ int main()
 {
 	int fin = 0;
 	int menu = 0;
+	int nombrePartie = 0;
 
 	while(menu != 1)
 	{
@@ -44,34 +45,45 @@ int main()
 				printf("Choisissez un nombre entre 1 et 100: \n");
 				scanf("%d", &input);
 
-
-				if((count >= 5)&&(input != random))
+				if ((input < 1)||(input > 100))
 				{
-					if(input < random)
+					printf("Erreur,le nombre doit être compris entre 1 et 100\n");
+				}
+				else
+				{
+				
+					if((count >= 5)&&(input != random))
 					{
-						printf("C'est plus! %d essaie, un indice pour aider: le nombres mystère est entre %d et %d\n", count, approxInf,approxSup);
+						if(input < random)
+						{
+							printf("C'est plus! %d essaie, un indice pour aider: le nombres mystère est entre %d et %d\n", count, approxInf,approxSup);
+						}
+						else if(input > random)
+						{
+							printf("C'est moins! %d essaie, un indice pour aider: le nombres mystère est entre %d et %d\n", count, approxInf,approxSup);
+						}
+					}
+					else if (input < random)
+					{
+						printf("C'est plus!\n");
+						count =  count + 1;
 					}
 					else if(input > random)
 					{
-						printf("C'est moins! %d essaie, un indice pour aider: le nombres mystère est entre %d et %d\n", count, approxInf,approxSup);
+						printf("C'est moins!\n");
+						count = count + 1;
+					}
+
+					else if(input == random)
+					{
+						printf("Gagné!\n");
+						nombrePartie = nombrePartie + 1;
+
+						printf("Vous avez gagné : %d d'affilé!\n",nombrePartie);
+						fin = 1;
 					}
 				}
-				else if (input < random)
-				{
-					printf("C'est plus!\n");
-					count =  count + 1;
-				}
-				else if(input > random)
-				{
-					printf("C'est moins!\n");
-					count = count + 1;
-				}
 
-				else if(input == random)
-				{
-					printf("Gagné!\n");
-					fin = 1;
-				}
 			}
 		}
 		menu = 0;
