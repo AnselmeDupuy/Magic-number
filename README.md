@@ -7,4 +7,4 @@ Pour le magicNumber j'ai rajouté des fonctionnalités:
 
 - Le joueur ne devrais pas pouvoir choisir autre choses que 1,2 et 10 dans le menu
 
-- 
+- le joueur ne devrais pas pouvoir aller au dela de 100, ou en dessous de 1.
